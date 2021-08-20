@@ -8,7 +8,7 @@ using Newtonsoft.Json;
 namespace APIClient.RickAndMortyIOService.DataHandling
 {
     public class DTO<ResponseType> where ResponseType : IResponse, new()
-    {
+    { 
         public ResponseType Response { get; set; }
 
         public void DeserializeResponse(string response)
