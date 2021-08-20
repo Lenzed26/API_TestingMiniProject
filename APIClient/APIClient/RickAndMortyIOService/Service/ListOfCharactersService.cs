@@ -17,13 +17,15 @@ namespace APIClient.RickAndMortyIOService.Service
         public CallManager CallManager { get; set; }
         public JArray Json_response { get; set; }
         //public DTO<BulkCharacterResponse> ListOfCharactersDTO { get; set; }
+        public JObject Json_response { get; set; }
+        public DTO<BulkCharacterResponse> ListOfCharactersDTO { get; set; }
         public int[] IdsSelected { get; set; }
         public string ListOfCharactersResponse { get; set; }
 
         public ListOfCharactersService()
         {
             CallManager = new CallManager();
-            //ListOfCharactersDTO = new DTO<BulkCharacterResponse>();
+            //ListOfCharactersDTO = new DTO<BulkCharacterResponse>();            
         }
 
         public async Task MakeRequestAsync(int[] ids)
