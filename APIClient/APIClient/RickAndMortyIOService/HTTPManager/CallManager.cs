@@ -18,14 +18,44 @@ namespace APIClient.RickAndMortyIOService.HTTPManager
             _client = new RestClient(AppConfigReader.BaseUrl);
         }
 
+        public async Task<string> MakeSingleEpisodeRequestAsync(string episode)
+        {
+            var request = new RestRequest(Method.GET);
+
+            request.AddHeader("Content-Type", "application/json");
+
+            request.Resource = $"episode/{episode.ToLower().Replace(" ", "")}";
+
+            var response = await _client.ExecuteAsync(request);
+
+            StatusCode = (int)response.StatusCode;
+            return response.Content;
+        }
+
+        public async Task<string> MakeBulkEpisodeRequestAsync()
+        {
+            var request = new RestRequest(Method.GET);
+
+            request.AddHeader("Content-Type", "application/json");
+
+            request.Resource = $"episode";
+
+            var response = await _client.ExecuteAsync(request);
+
+            StatusCode = (int)response.StatusCode;
+            return response.Content;
+        }
+
         public async Task<string> MakeBulkCharacterRequestAsync(int[] ids)
         {
+            var list = String.Join(",", ids.Select(c => c.ToString()).ToArray());
             var request = new RestRequest();
             request.AddHeader("Content-Type", "application/json");
 
-            request.Resource = $"characters/{ids}";
+            request.Resource = $"character/{list}";
 
-            var response = await _client.ExecuteAsync(request);
+            var response = await _client.ExecuteAsync(request);        
+            
 
             StatusCode = (int)response.StatusCode;
             return response.Content;
