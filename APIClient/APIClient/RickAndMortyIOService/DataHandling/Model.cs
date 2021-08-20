@@ -9,6 +9,29 @@ namespace APIClient.RickAndMortyIOService.DataHandling.Service
         public string air_date { get; set; }
         public string episode { get; set; }
         public string[] characters { get; set; }
+    }
+
+    public class SingleCharacterResponse : IResponse
+    {
+        public CharacterDetails character { get; set; }
+    }
+    public class BulkCharacterResponse : IResponse
+    {
+        public CharacterDetails[] character { get; set; }
+    }
+
+    public class CharacterDetails
+    {
+        public int id { get; set; }
+        public string name { get; set; }
+        public string status { get; set; }
+        public string species { get; set; }
+        public string type { get; set; }
+        public string gender { get; set; }
+        public Origin origin { get; set; }
+        public Location location { get; set; }
+        public string image { get; set; }
+        public string[] episode { get; set; }
         public string url { get; set; }
         public DateTime created { get; set; }
     }
@@ -36,6 +59,18 @@ namespace APIClient.RickAndMortyIOService.DataHandling.Service
         public string[] characters { get; set; }
         public string url { get; set; }
         public DateTime created { get; set; }
+    }
+  
+    public class Origin
+    {
+        public string name { get; set; }
+        public string url { get; set; }
+    }
+
+    public class Location
+    {
+        public string name { get; set; }
+        public string url { get; set; }
     }
 
 }
