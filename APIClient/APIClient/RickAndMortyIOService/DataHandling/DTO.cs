@@ -13,7 +13,7 @@ namespace APIClient.RickAndMortyIOService.DataHandling
 
         public void DeserializeResponse(string response)
         {
-            Response = JsonConvert.DeserializeObject <ResponseType>(response);
+            Response = JsonConvert.DeserializeObject<ResponseType>(response);
         }
 
     }
