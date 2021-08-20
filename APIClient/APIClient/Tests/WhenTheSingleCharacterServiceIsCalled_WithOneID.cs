@@ -44,7 +44,7 @@ namespace APIClient.Tests
         [Category("Happy")]
         public void ResponseId1_NameIsRickSanchez()
         {
-            Assert.Fail();
+            Assert.That(_singleCharactersService.SingleCharactersDTO.Response.name, Is.EqualTo("Rick Sanchez"));
         }
 
         [Test]

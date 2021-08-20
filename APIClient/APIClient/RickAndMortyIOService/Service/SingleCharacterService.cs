@@ -11,14 +11,14 @@ namespace APIClient.RickAndMortyIOService.Service
         //Properties
         public CallManager CallManager { get; set; }
         public JObject Json_response { get; set; }
-        public DTO<CharacterResponse> ListOfCharactersDTO { get; set; }
+        public DTO<SingleCharacterResponse> SingleCharactersDTO { get; set; }
         public int IdsSelected { get; set; }
         public string SingleCharactersResponse { get; set; }
 
         public SingleCharacterService()
         {
             CallManager = new CallManager();
-            ListOfCharactersDTO = new DTO<CharacterResponse>();
+            SingleCharactersDTO = new DTO<SingleCharacterResponse>();
         }
 
         public async Task MakeRequestAsync(int id)
@@ -26,7 +26,7 @@ namespace APIClient.RickAndMortyIOService.Service
             IdsSelected = id;
             SingleCharactersResponse = await CallManager.MakeSingleCharacterRequestAsync(id);
             Json_response = JObject.Parse(SingleCharactersResponse);
-            ListOfCharactersDTO.DeserializeResponse(SingleCharactersResponse);
+            SingleCharactersDTO.DeserializeResponse(SingleCharactersResponse);
         }
     }
 }

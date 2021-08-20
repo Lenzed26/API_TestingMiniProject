@@ -9,16 +9,10 @@ namespace APIClient.RickAndMortyIOService.DataHandling
 
     public class CharacterResponse : IResponse
     {
-        public CharacterDetails[] character { get; set; }
+        public SingleCharacterResponse character { get; set; }
     }
-
 
     public class SingleCharacterResponse : IResponse
-    {
-        public CharacterDetails character { get; set; }
-    }
-
-    public class CharacterDetails
     {
         public int id { get; set; }
         public string name { get; set; }
