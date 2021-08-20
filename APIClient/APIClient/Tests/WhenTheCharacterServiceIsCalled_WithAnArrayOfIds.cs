@@ -15,35 +15,37 @@ namespace APIClient.Tests
         public async Task OneTimeSetUpAsync()
         {
             _listOfCharactersService = new ListOfCharactersService();
-            await _listOfCharactersService.MakeRequestAsync(new int[] { 1, 2, 3});
+            await _listOfCharactersService.MakeRequestAsync(new int[] { 1, 2, 3 });
         }
 
         [Test]
         [Category("Happy")]
         public void StatusCodeIs200()
         {
-            Assert.Fail();
+            Assert.That(_listOfCharactersService.CallManager.StatusCode, Is.EqualTo(200));
         }
 
         [Test]
         [Category("Happy")]
         public void ResponseIsNotNull()
         {
-            Assert.Fail();
+            Assert.That(_listOfCharactersService.Json_response.ToString(), Is.Not.Null);
         }
 
         [Test]
         [Category("Happy")]
-        public void ResponseId1_NameIsRickSanchez()
+        public void ResponseContains_RickSanchez()
         {
-            Assert.Fail();
+            Assert.That(_listOfCharactersService.Json_response[0]["name"].ToString(), Is.EqualTo("Rick Sanchez"));
         }
 
         [Test]
         [Category("Happy")]
         public void Response_ReturnsCorrectResult()
         {
-            Assert.Fail();
+            Assert.That(_listOfCharactersService.Json_response[0]["name"].ToString(), Is.EqualTo("Rick Sanchez"));
+            Assert.That(_listOfCharactersService.Json_response[1]["name"].ToString(), Is.EqualTo("Morty Smith"));
+            Assert.That(_listOfCharactersService.Json_response[2]["name"].ToString(), Is.EqualTo("Summer Smith"));
         }
     }
 }

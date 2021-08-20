@@ -1,18 +1,18 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace APIClient.RickAndMortyIOService.DataHandling
-{
+{    
+    //public class BulkCharacterResponse : IResponse
+    //{        
+    //    public List<SingleCharacterResponse> character { get; set; }
+    //}
 
-    public class CharacterResponse : IResponse
-    {
-        public CharacterDetails[] character { get; set; }
-    }
-
-    public class CharacterDetails
+    public class SingleCharacterResponse : IResponse
     {
         public int id { get; set; }
         public string name { get; set; }
