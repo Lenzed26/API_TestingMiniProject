@@ -7,7 +7,7 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using APIClient.RickAndMortyIOService.DataHandling;
 using APIClient.RickAndMortyIOService.HTTPManager;
-using APIClient.RickAndMortyIOService.DataHandling.Service;
+using RestSharp;
 
 namespace APIClient.RickAndMortyIOService.Service
 {
@@ -15,6 +15,8 @@ namespace APIClient.RickAndMortyIOService.Service
     {
         //Properties
         public CallManager CallManager { get; set; }
+        public JArray Json_response { get; set; }
+        //public DTO<BulkCharacterResponse> ListOfCharactersDTO { get; set; }
         public JObject Json_response { get; set; }
         public DTO<BulkCharacterResponse> ListOfCharactersDTO { get; set; }
         public int[] IdsSelected { get; set; }
@@ -23,15 +25,15 @@ namespace APIClient.RickAndMortyIOService.Service
         public ListOfCharactersService()
         {
             CallManager = new CallManager();
-            ListOfCharactersDTO = new DTO<BulkCharacterResponse>();
+            //ListOfCharactersDTO = new DTO<BulkCharacterResponse>();            
         }
 
         public async Task MakeRequestAsync(int[] ids)
         {
             IdsSelected = ids;
             ListOfCharactersResponse = await CallManager.MakeBulkCharacterRequestAsync(ids);
-            Json_response = JObject.Parse(ListOfCharactersResponse);
-            ListOfCharactersDTO.DeserializeResponse(ListOfCharactersResponse);
+            Json_response = JArray.Parse(ListOfCharactersResponse);
+            //ListOfCharactersDTO.DeserializeToListResponse(ListOfCharactersResponse);
         }
     }
 }

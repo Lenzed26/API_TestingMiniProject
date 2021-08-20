@@ -1,6 +1,11 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-namespace APIClient.RickAndMortyIOService.DataHandling.Service
+namespace APIClient.RickAndMortyIOService.DataHandling
 {
     public class SingleEpisodeResponse : IResponse
     {
@@ -10,17 +15,8 @@ namespace APIClient.RickAndMortyIOService.DataHandling.Service
         public string episode { get; set; }
         public string[] characters { get; set; }
     }
-
+    
     public class SingleCharacterResponse : IResponse
-    {
-        public CharacterDetails character { get; set; }
-    }
-    public class BulkCharacterResponse : IResponse
-    {
-        public CharacterDetails[] character { get; set; }
-    }
-
-    public class CharacterDetails
     {
         public int id { get; set; }
         public string name { get; set; }
