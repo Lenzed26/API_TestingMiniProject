@@ -17,7 +17,7 @@ namespace APIClient.RickAndMortyIOService.Service
 
         public JObject Json_response { get; set; }
 
-        public DTO<ListOfEpisodesService> ListOfEpisodesDTO { get; set; }
+        public DTO<BulkEpisodeResponse> ListOfEpisodesDTO { get; set; }
 
         public string EpisodeSelected { get; set; }
 
@@ -26,12 +26,12 @@ namespace APIClient.RickAndMortyIOService.Service
         public ListOfEpisodesService()
         {
             CallManager = new CallManager();
-            ListOfEpisodesDTO = new DTO<ListOfEpisodesService>();
+            ListOfEpisodesDTO = new DTO<BulkEpisodeResponse>();
         }
 
-        public async Task MakeBulkEpisodeRequest(string episode)
+        public async Task MakeBulkEpisodeRequest()
         {
-            EpisodeSelected = episode;
+            //EpisodeSelected = episode;
             //make request
             EpisodeResponse = await CallManager.MakeBulkEpisodeRequestAsync();
 
