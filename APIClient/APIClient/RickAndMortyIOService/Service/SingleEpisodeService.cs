@@ -1,4 +1,5 @@
 ﻿using APIClient.RickAndMortyIOService.DataHandling;
+using APIClient.RickAndMortyIOService.DataHandling.Service;
 using APIClient.RickAndMortyIOService.HTTPManager;
 using Newtonsoft.Json.Linq;
 using System;
@@ -17,7 +18,7 @@ namespace APIClient.RickAndMortyIOService.Service
 
         public JObject Json_response { get; set; }
 
-        public DTO<SingleEpisodeService> SingleEpisodeDTO { get; set; }
+        public DTO<SingleEpisodeResponse> SingleEpisodeDTO { get; set; }
 
         public string EpisodeSelected { get; set; }
 
@@ -26,7 +27,7 @@ namespace APIClient.RickAndMortyIOService.Service
         public SingleEpisodeService()
         {
             CallManager = new CallManager();
-            SingleEpisodeDTO = new DTO<SingleEpisodeService>();
+            SingleEpisodeDTO = new DTO<SingleEpisodeResponse>();
         }
 
         public async Task MakeSingleEpisodeRequest(string episode)

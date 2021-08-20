@@ -13,7 +13,9 @@ namespace APIClient.RickAndMortyIOService.DataHandling
         public string name { get; set; }
         public string air_date { get; set; }
         public string episode { get; set; }
-        public string[] characters { get; set; }
+        public string[] @characters { get; set; }
+        public string url { get; set; }
+        public DateTime created { get; set; }
     }
 
     public class SingleCharacterResponse : IResponse
@@ -32,7 +34,7 @@ namespace APIClient.RickAndMortyIOService.DataHandling
         public DateTime created { get; set; }
     }
 
-    public class BulkEpisodeResponse: IResponse
+    public class BulkEpisodeResponse : IResponse
     {
         public Info info { get; set; }
         public Result[] results { get; set; }
@@ -56,7 +58,7 @@ namespace APIClient.RickAndMortyIOService.DataHandling
         public string url { get; set; }
         public DateTime created { get; set; }
     }
-  
+
     public class Origin
     {
         public string name { get; set; }
