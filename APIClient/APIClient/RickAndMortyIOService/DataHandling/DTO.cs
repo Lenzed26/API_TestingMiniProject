@@ -11,7 +11,7 @@ namespace APIClient.RickAndMortyIOService.DataHandling
     {
         public ResponseType Response { get; set; }
 
-        public void DeserializeToListResponse(string response)
+        public void DeserializeResponse(string response)
         {
             Response = JsonConvert.DeserializeObject<ResponseType>(response);
         }
