@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace APIClient.RickAndMortyIOService.Service
 {
-    class ListOfEpisodesService
+    class ListOfEpisodesService: IResponse
     {
         #region
 
@@ -17,7 +17,7 @@ namespace APIClient.RickAndMortyIOService.Service
 
         public JObject Json_response { get; set; }
 
-        public DTO<SingleEpisodeService> SingleEpisodeDTO { get; set; }
+        public DTO<ListOfEpisodesService> ListOfEpisodesDTO { get; set; }
 
         public string EpisodeSelected { get; set; }
 
@@ -26,19 +26,20 @@ namespace APIClient.RickAndMortyIOService.Service
         public ListOfEpisodesService()
         {
             CallManager = new CallManager();
+            ListOfEpisodesDTO = new DTO<ListOfEpisodesService>();
         }
 
-        public async Task MakeEpisodeRequest(string episode)
+        public async Task MakeBulkEpisodeRequest(string episode)
         {
             EpisodeSelected = episode;
             //make request
-            EpisodeResponse = await CallManager.MakeEpisodeRequestAsync(episode);
+            EpisodeResponse = await CallManager.MakeBulkEpisodeRequestAsync();
 
             //parse JSON string into object
             Json_response = JObject.Parse(EpisodeResponse);
 
             //Serialize the DTO object
-            SingleEpisodeDTO.DeserializeResponse();
+            ListOfEpisodesDTO.DeserializeResponse(EpisodeResponse);
         }
 
         #endregion

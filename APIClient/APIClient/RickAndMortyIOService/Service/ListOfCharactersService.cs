@@ -7,7 +7,7 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using APIClient.RickAndMortyIOService.DataHandling;
 using APIClient.RickAndMortyIOService.HTTPManager;
-
+using APIClient.RickAndMortyIOService.DataHandling.Service;
 
 namespace APIClient.RickAndMortyIOService.Service
 {
@@ -16,14 +16,14 @@ namespace APIClient.RickAndMortyIOService.Service
         //Properties
         public CallManager CallManager { get; set; }
         public JObject Json_response { get; set; }
-        public DTO<CharacterResponse> ListOfCharactersDTO { get; set; }
+        public DTO<BulkCharacterResponse> ListOfCharactersDTO { get; set; }
         public int[] IdsSelected { get; set; }
         public string ListOfCharactersResponse { get; set; }
 
         public ListOfCharactersService()
         {
             CallManager = new CallManager();
-            ListOfCharactersDTO = new DTO<CharacterResponse>();
+            ListOfCharactersDTO = new DTO<BulkCharacterResponse>();
         }
 
         public async Task MakeRequestAsync(int[] ids)
