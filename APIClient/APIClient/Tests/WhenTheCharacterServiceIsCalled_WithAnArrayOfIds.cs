@@ -4,15 +4,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using NUnit.Framework;
+using APIClient.RickAndMortyIOService.Service;
 
 namespace APIClient.Tests
 {
-    class WhenTheServiceIsCalled_WithAnArrayOfIds
+    class WhenTheCharacterServiceIsCalled_WithAnArrayOfIds
     {
+        ListOfCharactersService _listOfCharactersService;
         [OneTimeSetUp]
-        public void OneTimeSetUp()
+        public async Task OneTimeSetUpAsync()
         {
-
+            _listOfCharactersService = new ListOfCharactersService();
+            await _listOfCharactersService.MakeRequestAsync(new int[] { 1, 2, 3});
         }
 
         [Test]

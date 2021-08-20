@@ -85,7 +85,7 @@
     <Compile Include="RickAndMortyIOService\Service\ListOfCharactersService.cs" />
     <Compile Include="RickAndMortyIOService\Service\ListOfEpisodesService.cs" />
     <Compile Include="RickAndMortyIOService\Service\SingleEpisodeService.cs" />
-    <Compile Include="Tests\WhenTheServiceIsCalled_WithAnArrayOfIds.cs" />
+    <Compile Include="Tests\WhenTheCharacterServiceIsCalled_WithAnArrayOfIds.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
