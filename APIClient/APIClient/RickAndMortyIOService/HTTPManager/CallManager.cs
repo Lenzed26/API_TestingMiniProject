@@ -12,6 +12,12 @@ namespace APIClient.RickAndMortyIOService.HTTPManager
     {
         private readonly IRestClient _client;
         public int StatusCode { get; set; }
+        
+
+        public async Task<string> MakeEpisodeRequestAsync(string episode)
+        {
+            throw new NotImplementedException();
+        }        
 
         public CallManager()
         {
