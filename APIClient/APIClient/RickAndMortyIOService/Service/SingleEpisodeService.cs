@@ -1,5 +1,4 @@
 ﻿using APIClient.RickAndMortyIOService.DataHandling;
-using APIClient.RickAndMortyIOService.DataHandling.Service;
 using APIClient.RickAndMortyIOService.HTTPManager;
 using Newtonsoft.Json.Linq;
 using System;

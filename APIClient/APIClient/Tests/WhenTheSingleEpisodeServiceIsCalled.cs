@@ -20,18 +20,21 @@ namespace APIClient.Tests
         }
 
         [Test]
+        [Category("Happy")]
         public void StatusIs200()
         {
             Assert.That(_singleEpisodeService.CallManager.StatusCode, Is.EqualTo(200));
         }
 
         [Test]
+        [Category("Happy")]
         public void ResponseIsNotNull()
         {
             Assert.That(_singleEpisodeService.Json_response, Is.Not.Null);
         }
 
         [Test]
+        [Category("Happy")]
         public void Response_ReturnEpisodeId_ReturnsRightDetails()
         {
             Assert.That(_singleEpisodeService.SingleEpisodeDTO.Response.id , Is.EqualTo(1));
