@@ -1,4 +1,5 @@
-﻿using APIClient.RickAndMortyIOService.Service;
+﻿using APIClient.RickAndMortyIOService.HTTPManager;
+using APIClient.RickAndMortyIOService.Service;
 using NUnit.Framework;
 using System;
 using System.Collections.Generic;
@@ -22,7 +23,7 @@ namespace APIClient.Tests
         [Category("Happy")]
         public void StatusCodeIs200()
         {
-            Assert.Fail();
+            Assert.That(_singleCharactersService.CallManager.StatusCode, Is.EqualTo(200));
         }
 
         [Test]

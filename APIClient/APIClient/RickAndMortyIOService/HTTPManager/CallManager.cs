@@ -36,7 +36,7 @@ namespace APIClient.RickAndMortyIOService.HTTPManager
             var request = new RestRequest();
             request.AddHeader("Content-Type", "application/json");
 
-            request.Resource = $"characters/{id}";
+            request.Resource = $"character/{id}";
 
             var response = await _client.ExecuteAsync(request);
 
