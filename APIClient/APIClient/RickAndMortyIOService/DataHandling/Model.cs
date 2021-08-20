@@ -15,7 +15,7 @@ namespace APIClient.RickAndMortyIOService.DataHandling
         public string episode { get; set; }
         public string[] characters { get; set; }
     }
-    
+
     public class SingleCharacterResponse : IResponse
     {
         public int id { get; set; }
