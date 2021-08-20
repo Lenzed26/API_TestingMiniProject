@@ -1,12 +1,32 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
+using APIClient.RickAndMortyIOService.DataHandling;
+using APIClient.RickAndMortyIOService.HTTPManager;
 
 namespace APIClient.RickAndMortyIOService.Service
 {
     class SingleCharacterService
     {
+        //Properties
+        public CallManager CallManager { get; set; }
+        public JObject Json_response { get; set; }
+        public DTO<CharacterResponse> ListOfCharactersDTO { get; set; }
+        public int IdsSelected { get; set; }
+        public string ListOfCharactersResponse { get; set; }
+
+        public SingleCharacterService()
+        {
+            CallManager = new CallManager();
+            ListOfCharactersDTO = new DTO<CharacterResponse>();
+        }
+
+        public async Task MakeRequestAsync(int id)
+        {
+            IdsSelected = id;
+            ListOfCharactersResponse = await CallManager.MakeSingleCharacterRequestAsync(id);
+            Json_response = JObject.Parse(ListOfCharactersResponse);
+            ListOfCharactersDTO.DeserializeResponse(ListOfCharactersResponse);
+        }
     }
 }
