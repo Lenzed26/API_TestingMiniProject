@@ -4,10 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace APIClient.RickAndMortyIOService.Service
+namespace APIClient.Tests
 {
-    class SingleEpisodeService
+    class WhenTheSingleCharacterServiceIsCalled_WithOneID
     {
-
     }
 }
