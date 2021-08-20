@@ -30,5 +30,17 @@ namespace APIClient.RickAndMortyIOService.HTTPManager
             StatusCode = (int)response.StatusCode;
             return response.Content;
         }
+        public async Task<IRestResponse> MakeSingleLocationRequestAsync(int id)
+        {
+            //Set up the Request
+            var request = new RestRequest();
+            request.AddHeader("Content-Type", "application/json");
+            //Define request resource path
+            request.Resource = $"location/{id}";
+            //Make Request and Return the Response 
+            return await _client.ExecuteAsync(request);
+            
+
+        }
     }
 }
