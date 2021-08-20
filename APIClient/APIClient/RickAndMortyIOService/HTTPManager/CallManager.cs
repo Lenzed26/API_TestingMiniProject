@@ -8,5 +8,9 @@ namespace APIClient.RickAndMortyIOService.HTTPManager
 {
     public class CallManager
     {
+        internal Task<string> MakeEpisodeRequestAsync(string episode)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
