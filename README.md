@@ -2,10 +2,9 @@
 
 ## Project Description
 
-We will be using the Rick and Morty API using  a scrum framework, which covers unit tests to test the API responses and request using rest sharp. As a team, we used GitHub as our Control Version System.
+We will be using the Rick and Morty API using  a scrum framework, which covers unit tests to test the API responses and request using RestSharp. As a team, we used GitHub as our Control Version System.
 
 ## Project Goals
-
 - The aim of the project was to show our understandings of API's and develop a test framework for an API of our choice. 
   The project was considered finished when we accomplished all our user stories and had created appropriate tests for all of them. With this in mind our main goals were (from the brief) were as follows:
 
@@ -92,6 +91,6 @@ Once you have opened the Project in Visual Studio if the packages haven't been a
 1. Open the APIClient and right click on Dependencies and click on manage Nuget packages.
 2. From here click on browse and search for "Newtonsoft.Json", "NUnit", "NUnit3TestAdapter", "RestSharp", "System.Configuration.ConfigurationManager", "System.Security.AccessControl", "System.Security.Permissions" and "System.Security.Principal.Windows" install both of these packages.
 
-![NuGet Packages](/Images/NuGet Packages.JPG)
+![NuGet Packages](/Images/NuGet&#32;Packages.JPG)
 
 Once you have completed all these steps you will have setup the complete solution for the APIClient. You can now test, add functionality and play around with the application.

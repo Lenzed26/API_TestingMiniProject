@@ -43,6 +43,13 @@ namespace APIClient.Tests
             Assert.That(_singleCharactersService.SingleCharactersDTO.Response.location.url, Is.EqualTo("https://rickandmortyapi.com/api/location/20"));
             Assert.That(_singleCharactersService.SingleCharactersDTO.Response.episode[0], Is.EqualTo("https://rickandmortyapi.com/api/episode/1"));
         }
+
+        [Test]
+        [Category("Happy")]
+        public void ResponseId1_CountsCorrectNumberOfEpisode()
+        {
+            Assert.That(_singleCharactersService.SingleCharactersDTO.Response.episode.Count<String>, Is.EqualTo(41));
+        }
     }
 
     class WhenTheSingleCharacterServiceIsCalled_WithNegativeNumberInput
