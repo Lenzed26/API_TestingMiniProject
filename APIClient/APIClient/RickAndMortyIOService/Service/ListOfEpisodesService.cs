@@ -1,10 +1,6 @@
 ﻿using APIClient.RickAndMortyIOService.DataHandling;
 using APIClient.RickAndMortyIOService.HTTPManager;
 using Newtonsoft.Json.Linq;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace APIClient.RickAndMortyIOService.Service
@@ -29,11 +25,11 @@ namespace APIClient.RickAndMortyIOService.Service
             ListOfEpisodesDTO = new DTO<BulkEpisodeResponse>();
         }
 
-        public async Task MakeBulkEpisodeRequest()
+        public async Task MakeBulkEpisodeRequest(string episode)
         {
-            //EpisodeSelected = episode;
+            EpisodeSelected = episode;
             //make request
-            EpisodeResponse = await CallManager.MakeBulkEpisodeRequestAsync();
+            EpisodeResponse = await CallManager.MakeBulkEpisodeRequestAsync(episode);
 
             //parse JSON string into object
             Json_response = JObject.Parse(EpisodeResponse);

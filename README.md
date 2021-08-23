@@ -6,15 +6,14 @@ We will be using the Rick and Morty API using  a scrum framework, which covers u
 
 ## Project Goals
 
-- The project has to be a 3 Tier Application
-  - It should include a Model, Business and GUI Layer
-- The project should also include Tests where there are multiple test cases to ensure the application works as intended
-- The project should include an SQL database with at least two linked tables. These tables will be:
-  - The "User" Table to keep track of Username and Password as well as any other data that is related to the user. This table will have a 1 to 1 relationship with with roles which stored whether the user is an admin or a normal user.
-  - The "Role" Table to link the Users to their access and permissions type.
-- The project should use Entity Framework to manage the relationship between the backend object model and the database
-- The project should be easily tracked through git commits and have a thorough ReadMe File.
-- The project should also fit the project Description
+- The aim of the project was to show our understandings of API's and develop a test framework for an API of our choice. 
+  The project was considered finished when we accomplished all our user stories and had created appropriate tests for all of them. With this in mind our main goals were (from the brief) were as follows:
+
+  - Create a test framework for a chosen API that tests all data in the RESPONSE and tests at least 3 requests.
+
+  - A complete Kanban board to document the process 
+
+  - Detailed Readme explaining how to use the framework
 
 ## Class Diagrams
 
