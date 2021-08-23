@@ -27,11 +27,13 @@ namespace APIClient.RickAndMortyIOService.HTTPManager
             return response.Content;
         }
 
-        public async Task<string> MakeBulkEpisodeRequestAsync()
+        public async Task<string> MakeBulkEpisodeRequestAsync(string episode)
         {
             var request = new RestRequest(Method.GET);
 
-            request.Resource = $"episode";
+            request.AddHeader("Content-Type", "application/json");
+
+            request.Resource = $"{episode}";
 
             var response = await _client.ExecuteAsync(request);
 

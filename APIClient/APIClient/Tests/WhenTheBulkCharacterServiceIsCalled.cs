@@ -8,7 +8,7 @@ using APIClient.RickAndMortyIOService.Service;
 
 namespace APIClient.Tests
 {
-    class WhenTheCharacterServiceIsCalled_WithAnArrayOfIds
+    class WhenTheBulkCharacterServiceIsCalled
     {
         ListOfCharactersService _listOfCharactersService;
         [OneTimeSetUp]

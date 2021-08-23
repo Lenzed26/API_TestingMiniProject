@@ -90,12 +90,13 @@
     <Compile Include="RickAndMortyIOService\Service\SingleEpisodeService.cs" />
     <Compile Include="Tests\WhenLocationServiceIsCalled_WithSingleID.cs" />
     <Compile Include="Tests\WhenTheBulkEpisodeServiceIsCalled.cs" />
-    <Compile Include="Tests\WhenTheCharacterServiceIsCalled_WithAnArrayOfIds.cs" />
+    <Compile Include="Tests\WhenTheBulkCharacterServiceIsCalled.cs" />
     <Compile Include="Tests\WhenTheSingleCharacterServiceIsCalled_WithOneID.cs" />
     <Compile Include="Tests\WhenTheSingleEpisodeServiceIsCalled.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
+    <None Include="RickAndMortyAPIClassDiagram.cd" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup />

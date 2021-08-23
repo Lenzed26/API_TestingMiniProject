@@ -1,9 +1,4 @@
-﻿using Newtonsoft.Json;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System;
 
 namespace APIClient.RickAndMortyIOService.DataHandling
 {
@@ -16,6 +11,8 @@ namespace APIClient.RickAndMortyIOService.DataHandling
         public string[] @characters { get; set; }
         public string url { get; set; }
         public DateTime created { get; set; }
+        public string error { get; set; }
+
     }
 
     public class SingleCharacterResponse : IResponse
@@ -38,6 +35,7 @@ namespace APIClient.RickAndMortyIOService.DataHandling
     {
         public Info info { get; set; }
         public Result[] results { get; set; }
+        public string error { get; set; }
     }
 
     public class BulkCharacterResponse : IResponse
