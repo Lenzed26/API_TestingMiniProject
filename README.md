@@ -20,7 +20,7 @@ We will be using the Rick and Morty API using  a scrum framework, which covers u
 
 ##### Model
 
-![Model_Class_Diagram](C:\Sparta\API_TestingMiniProject\Images\Model_Class_Diagram.JPG)
+![Model_Class_Diagram](/Images/Model_Class_Diagram.JPG)
 
 ## Sprints
 
@@ -28,7 +28,7 @@ We will be using the Rick and Morty API using  a scrum framework, which covers u
 
 #### Kanban Board at the start
 
-![Sprint_One_Before](C:\Sparta\API_TestingMiniProject\Images\Sprint_One_Before.JPG)
+![Sprint_One_Before](/Images/Sprint_One_Before.JPG)
 
 #### Sprint Goals
 
@@ -43,7 +43,7 @@ We will be using the Rick and Morty API using  a scrum framework, which covers u
 
 #### Kanban Board at the end
 
-![Sprint_One_Before](C:\Sparta\API_TestingMiniProject\Images\Sprint_One_Before.JPG)
+![Sprint_One_Before](/Images/Sprint_One_Before.JPG)
 
 #### Sprint Review
 
@@ -57,7 +57,7 @@ As a team, we are communication with the team on the user cases to allocate test
 
 #### Kanban Board at the start
 
-![Sprint_Two_Before](C:\Sparta\API_TestingMiniProject\Images\Sprint_Two_Before.JPG)
+![Sprint_Two_Before](/Images/Sprint_Two_Before.JPG)
 
 #### Sprint Goals
 
@@ -70,7 +70,7 @@ As a team, we are communication with the team on the user cases to allocate test
 
 ### Kanban Board at the end
 
-![Sprint_Two_After](C:\Sparta\API_TestingMiniProject\Images\Sprint_Two_After.JPG)
+![Sprint_Two_After](/Images/Sprint_Two_After.JPG)
 
 #### Sprint Review
 
@@ -93,6 +93,6 @@ Once you have opened the Project in Visual Studio if the packages haven't been a
 1. Open the APIClient and right click on Dependencies and click on manage Nuget packages.
 2. From here click on browse and search for "Newtonsoft.Json", "NUnit", "NUnit3TestAdapter", "RestSharp", "System.Configuration.ConfigurationManager", "System.Security.AccessControl", "System.Security.Permissions" and "System.Security.Principal.Windows" install both of these packages.
 
-![NuGet Packages](C:\Sparta\API_TestingMiniProject\Images\NuGet Packages.JPG)
+![NuGet Packages](/Images/NuGet Packages.JPG)
 
 Once you have completed all these steps you will have setup the complete solution for the APIClient. You can now test, add functionality and play around with the application.
