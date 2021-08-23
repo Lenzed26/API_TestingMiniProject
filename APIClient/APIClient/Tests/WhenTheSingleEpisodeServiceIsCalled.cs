@@ -8,8 +8,8 @@ namespace APIClient.Tests
     {
         private SingleEpisodeService _singleEpisodeService;
         
-        [OneTimeSetUp]
-        public async Task OneTimeSetUp()
+        [SetUp]
+        public async Task SetUp()
         {
             _singleEpisodeService = new SingleEpisodeService();
             await _singleEpisodeService.MakeSingleEpisodeRequest("1");

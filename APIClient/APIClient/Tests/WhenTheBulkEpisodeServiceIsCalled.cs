@@ -8,8 +8,8 @@ namespace APIClient.Tests
     class WhenTheBulkEpisodeServiceIsCalled
     {
         private ListOfEpisodesService _listOfEpisodesService;
-        [OneTimeSetUp]
-        public async Task OneTimeSetUp()
+        [SetUp]
+        public async Task SetUp()
         {
             _listOfEpisodesService = new ListOfEpisodesService();
             await _listOfEpisodesService.MakeBulkEpisodeRequest("episode");
