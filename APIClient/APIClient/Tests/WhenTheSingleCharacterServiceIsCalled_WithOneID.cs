@@ -27,31 +27,46 @@ namespace APIClient.Tests
         }
 
         [Test]
-        [Category("Sad")]
-        public void WithInvalidID_StatusCodeIs400()
-        {
-            Assert.Fail();
-        }
-
-        [Test]
         [Category("Happy")]
         public void ResponseIsNotNull()
         {
-            Assert.Fail();
+            Assert.That(_singleCharactersService.SingleCharactersDTO.Response, Is.Not.Null);
         }
 
         [Test]
         [Category("Happy")]
-        public void ResponseId1_NameIsRickSanchez()
+        public void ResponseId1_CharacterDetailsAreCorrect()
         {
             Assert.That(_singleCharactersService.SingleCharactersDTO.Response.name, Is.EqualTo("Rick Sanchez"));
+            Assert.That(_singleCharactersService.SingleCharactersDTO.Response.status, Is.EqualTo("Alive"));
+            Assert.That(_singleCharactersService.SingleCharactersDTO.Response.origin.url, Is.EqualTo("https://rickandmortyapi.com/api/location/1"));
+            Assert.That(_singleCharactersService.SingleCharactersDTO.Response.location.url, Is.EqualTo("https://rickandmortyapi.com/api/location/20"));
+            Assert.That(_singleCharactersService.SingleCharactersDTO.Response.episode[0], Is.EqualTo("https://rickandmortyapi.com/api/episode/1"));
+        }
+    }
+
+    class WhenTheSingleCharacterServiceIsCalled_WithNegativeNumberInput
+    {
+        SingleCharacterService _singleCharactersService;
+        [OneTimeSetUp]
+        public async Task OneTimeSetUpAsync()
+        {
+            _singleCharactersService = new SingleCharacterService();
+            await _singleCharactersService.MakeRequestAsync(-5);
         }
 
         [Test]
-        [Category("Happy")]
-        public void Response_ReturnsCorrectResult()
+        [Category("Sad")]
+        public void StatusCodeIs404()
         {
-            Assert.Fail();
+            Assert.That(_singleCharactersService.CallManager.StatusCode, Is.EqualTo(404));
+        }
+
+        [Test]
+        [Category("Sad")]
+        public void ResponseIsNull()
+        {
+            Assert.That(_singleCharactersService.SingleCharactersDTO.Response.name, Is.Null);
         }
     }
 }
