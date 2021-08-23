@@ -18,7 +18,7 @@ We will be using the Rick and Morty API using  a scrum framework, which covers u
 
 ##### Model
 
-![Model_Class_Diagram](/Images/Model_Class_Diagram.JPG)
+![Model_Class_Diagram](/Images/Class_Diagram.JPG)
 
 ## Sprints
 
