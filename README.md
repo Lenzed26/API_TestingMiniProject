@@ -91,6 +91,6 @@ Once you have opened the Project in Visual Studio if the packages haven't been a
 1. Open the APIClient and right click on Dependencies and click on manage Nuget packages.
 2. From here click on browse and search for "Newtonsoft.Json", "NUnit", "NUnit3TestAdapter", "RestSharp", "System.Configuration.ConfigurationManager", "System.Security.AccessControl", "System.Security.Permissions" and "System.Security.Principal.Windows" install both of these packages.
 
-![NuGet Packages](/Images/NuGet&#32;Packages.JPG)
+![NuGet Packages](/Images/NuGet_Packages.JPG)
 
 Once you have completed all these steps you will have setup the complete solution for the APIClient. You can now test, add functionality and play around with the application.
