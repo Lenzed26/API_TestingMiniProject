@@ -2,16 +2,11 @@
 
 ## Project Description
 
-We will be using the Rick and Morty API using  a scrum framework, which covers unit tests to test the API responses and request using rest sharp. As a team, we used GitHub as our Control Version System.
+We will be using the Rick and Morty API using  a scrum framework, which covers unit tests to test the API responses and request using RestSharp. As a team, we used GitHub as our Control Version System.
 
 ## Project Goals
 
-- The project has to be a 3 Tier Application
-  - It should include a Model, Business and GUI Layer
-- The project should also include Tests where there are multiple test cases to ensure the application works as intended
-- The project should include an SQL database with at least two linked tables. These tables will be:
-  - The "User" Table to keep track of Username and Password as well as any other data that is related to the user. This table will have a 1 to 1 relationship with with roles which stored whether the user is an admin or a normal user.
-  - The "Role" Table to link the Users to their access and permissions type.
+- The project should also include Unit Tests where there are multiple test cases to ensure the API works as intended
 - The project should use Entity Framework to manage the relationship between the backend object model and the database
 - The project should be easily tracked through git commits and have a thorough ReadMe File.
 - The project should also fit the project Description
@@ -93,6 +88,6 @@ Once you have opened the Project in Visual Studio if the packages haven't been a
 1. Open the APIClient and right click on Dependencies and click on manage Nuget packages.
 2. From here click on browse and search for "Newtonsoft.Json", "NUnit", "NUnit3TestAdapter", "RestSharp", "System.Configuration.ConfigurationManager", "System.Security.AccessControl", "System.Security.Permissions" and "System.Security.Principal.Windows" install both of these packages.
 
-![NuGet Packages](/Images/NuGet Packages.JPG)
+![NuGet Packages](/Images/NuGet&#32;Packages.JPG)
 
 Once you have completed all these steps you will have setup the complete solution for the APIClient. You can now test, add functionality and play around with the application.
