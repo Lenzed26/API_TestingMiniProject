@@ -15,7 +15,7 @@ namespace APIClient.Tests
         public async Task OneTimeSetUpAsync()
         {
             _listOfCharactersService = new ListOfCharactersService();
-            await _listOfCharactersService.MakeRequestAsync(new int[] { 1, 2, 3 });
+            await _listOfCharactersService.MakeRequestAsync();
         }
 
         [Test]
@@ -34,18 +34,21 @@ namespace APIClient.Tests
 
         [Test]
         [Category("Happy")]
-        public void ResponseContains_RickSanchez()
+        public void ResponseId1_ContainsRickSanchez()
         {
-            Assert.That(_listOfCharactersService.Json_response[0]["name"].ToString(), Is.EqualTo("Rick Sanchez"));
+            Assert.That(_listOfCharactersService.ListOfCharactersDTO.Response.results[0].id, Is.EqualTo(1));
+            Assert.That(_listOfCharactersService.ListOfCharactersDTO.Response.results[0].name, Is.EqualTo("Rick Sanchez"));
+
         }
 
         [Test]
         [Category("Happy")]
-        public void Response_ReturnsCorrectResult()
+        public void Response_ReturnsCorrectResultCount()
         {
-            Assert.That(_listOfCharactersService.Json_response[0]["name"].ToString(), Is.EqualTo("Rick Sanchez"));
-            Assert.That(_listOfCharactersService.Json_response[1]["name"].ToString(), Is.EqualTo("Morty Smith"));
-            Assert.That(_listOfCharactersService.Json_response[2]["name"].ToString(), Is.EqualTo("Summer Smith"));
+            Assert.That(_listOfCharactersService.ListOfCharactersDTO.Response.info.count, Is.EqualTo(671));
+            Assert.That(_listOfCharactersService.ListOfCharactersDTO.Response.info.pages, Is.EqualTo(34)); //JSON response is too long so it is split up into 34 pages
         }
+
+
     }
 }

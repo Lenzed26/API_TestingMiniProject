@@ -38,6 +38,12 @@ namespace APIClient.RickAndMortyIOService.DataHandling
         public Result[] results { get; set; }
     }
 
+    public class BulkCharacterResponse : IResponse
+    {
+        public Info info { get; set; }
+        public SingleCharacterResponse[] results { get; set; }
+    }
+
     public class Info
     {
         public int count { get; set; }

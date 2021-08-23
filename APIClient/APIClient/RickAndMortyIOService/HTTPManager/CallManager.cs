@@ -46,13 +46,12 @@ namespace APIClient.RickAndMortyIOService.HTTPManager
             return response.Content;
         }
 
-        public async Task<string> MakeBulkCharacterRequestAsync(int[] ids)
-        {
-            var list = String.Join(",", ids.Select(c => c.ToString()).ToArray());
+        public async Task<string> MakeBulkCharacterRequestAsync()
+        {            
             var request = new RestRequest();
             request.AddHeader("Content-Type", "application/json");
 
-            request.Resource = $"character/{list}";
+            request.Resource = $"character";
 
             var response = await _client.ExecuteAsync(request);        
             
