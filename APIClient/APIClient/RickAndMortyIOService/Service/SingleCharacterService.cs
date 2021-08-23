@@ -6,7 +6,7 @@ using APIClient.RickAndMortyIOService.HTTPManager;
 
 namespace APIClient.RickAndMortyIOService.Service
 {
-    class SingleCharacterService
+    class SingleCharacterService 
     {
         //Properties
         public CallManager CallManager { get; set; }
