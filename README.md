@@ -5,11 +5,14 @@
 We will be using the Rick and Morty API using  a scrum framework, which covers unit tests to test the API responses and request using RestSharp. As a team, we used GitHub as our Control Version System.
 
 ## Project Goals
+- The aim of the project was to show our understandings of API's and develop a test framework for an API of our choice. 
+  The project was considered finished when we accomplished all our user stories and had created appropriate tests for all of them. With this in mind our main goals were (from the brief) were as follows:
 
-- The project should also include Unit Tests where there are multiple test cases to ensure the API works as intended
-- The project should use Entity Framework to manage the relationship between the backend object model and the database
-- The project should be easily tracked through git commits and have a thorough ReadMe File.
-- The project should also fit the project Description
+  - Create a test framework for a chosen API that tests all data in the RESPONSE and tests at least 3 requests.
+
+  - A complete Kanban board to document the process 
+
+  - Detailed Readme explaining how to use the framework
 
 ## Class Diagrams
 

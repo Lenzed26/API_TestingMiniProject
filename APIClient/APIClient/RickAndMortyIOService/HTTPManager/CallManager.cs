@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Newtonsoft.Json.Linq;
+﻿using System.Threading.Tasks;
 using RestSharp;
 
 namespace APIClient.RickAndMortyIOService.HTTPManager
@@ -32,13 +27,13 @@ namespace APIClient.RickAndMortyIOService.HTTPManager
             return response.Content;
         }
 
-        public async Task<string> MakeBulkEpisodeRequestAsync()
+        public async Task<string> MakeBulkEpisodeRequestAsync(string episode)
         {
             var request = new RestRequest(Method.GET);
 
             request.AddHeader("Content-Type", "application/json");
 
-            request.Resource = $"episode";
+            request.Resource = $"{episode}";
 
             var response = await _client.ExecuteAsync(request);
 
@@ -69,8 +64,6 @@ namespace APIClient.RickAndMortyIOService.HTTPManager
             request.Resource = $"location/{id}";
             //Make Request and Return the Response 
             return await _client.ExecuteAsync(request);
-            
-
         }
 
 
