@@ -35,4 +35,28 @@ namespace APIClient.Tests
         }
         
     }
+    public class WhenLocationServiceIsCalled_WithInvalidID
+    {
+        SingleLocationService _singleLocationService;
+
+        [OneTimeSetUp]
+        public async Task OneTimeSetupAsync()
+        {
+            _singleLocationService = new SingleLocationService();
+            int badId = -1;
+            await _singleLocationService.MakeRequestAsync(badId);
+        }
+        [Test]
+        [Category("Sad")]
+        public void GivenInvalidId_ReturnNull()
+        {
+            Assert.That(_singleLocationService.LocationsDTO.Response.name, Is.EqualTo(null));
+        }
+        [Test]
+        [Category("Sad")]
+        public void GivenInvalidId_ReturnStatusCode404()
+        {
+            Assert.That(_singleLocationService.StatusCode, Is.EqualTo(404));
+        }
+    }
 }
