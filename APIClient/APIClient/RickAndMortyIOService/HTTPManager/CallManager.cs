@@ -13,7 +13,8 @@ namespace APIClient.RickAndMortyIOService.HTTPManager
         {
             request = new RestRequest();
             request.AddHeader("Content-Type", "application/json");
-            _client = new RestClient(AppConfigReader.BaseUrl);
+            //_client = new RestClient(AppConfigReader.BaseUrl);
+            _client = new RestClient(AppConfigReader.WebUrl);
         }
 
         public async Task<string> MakeSingleEpisodeRequestAsync(string episode)
