@@ -1,0 +1,6 @@
+﻿DBCC CHECKIDENT ('Characters', RESEED, 0);
+GO
+DBCC CHECKIDENT ('Locations', RESEED, 0);
+GO
+DBCC CHECKIDENT ('Episodes', RESEED, 0);
+GO

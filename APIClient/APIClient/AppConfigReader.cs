@@ -10,5 +10,6 @@ namespace APIClient
     public static class AppConfigReader
     {
         public static readonly string BaseUrl = ConfigurationManager.AppSettings["base_url"];
+        public static readonly string WebUrl = ConfigurationManager.AppSettings["web_url"];
     }
 }
