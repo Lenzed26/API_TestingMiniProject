@@ -20,14 +20,14 @@ namespace APIWebServer.Controllers
             _context = context;
         }
 
-        // GET: api/Characters
+        // GET: api/character
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Character>>> GetCharacters()
         {
             return await _context.Characters.ToListAsync();
         }
 
-        // GET: api/Characters/5
+        // GET: api/character/5
         [HttpGet("{id}")]
         public async Task<ActionResult<Character>> GetCharacter(int id)
         {
@@ -41,7 +41,7 @@ namespace APIWebServer.Controllers
             return character;
         }
 
-        // PUT: api/Characters/5
+        // PUT: api/character/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
         public async Task<IActionResult> PutCharacter(int id, Character character)
@@ -72,7 +72,7 @@ namespace APIWebServer.Controllers
             return NoContent();
         }
 
-        // POST: api/Characters
+        // POST: api/character
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
         public async Task<ActionResult<Character>> PostCharacter(Character character)
@@ -83,7 +83,7 @@ namespace APIWebServer.Controllers
             return CreatedAtAction(nameof(GetCharacter), new { id = character.Id }, character);
         }
 
-        // DELETE: api/Characters/5
+        // DELETE: api/character/5
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteCharacter(int id)
         {

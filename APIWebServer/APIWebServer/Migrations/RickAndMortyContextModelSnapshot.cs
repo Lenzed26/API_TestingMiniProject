@@ -35,7 +35,7 @@ namespace APIWebServer.Migrations
                     b.Property<string>("Image")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int?>("LocationsId")
+                    b.Property<int?>("LocationId")
                         .HasColumnType("int");
 
                     b.Property<string>("Name")
@@ -55,7 +55,7 @@ namespace APIWebServer.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("LocationsId");
+                    b.HasIndex("LocationId");
 
                     b.ToTable("Characters");
                 });
@@ -119,23 +119,23 @@ namespace APIWebServer.Migrations
                     b.Property<int>("CharactersId")
                         .HasColumnType("int");
 
-                    b.Property<int>("EpisodesId")
+                    b.Property<int>("EpisodeId")
                         .HasColumnType("int");
 
-                    b.HasKey("CharactersId", "EpisodesId");
+                    b.HasKey("CharactersId", "EpisodeId");
 
-                    b.HasIndex("EpisodesId");
+                    b.HasIndex("EpisodeId");
 
                     b.ToTable("CharacterEpisode");
                 });
 
             modelBuilder.Entity("APIWebServer.Models.Character", b =>
                 {
-                    b.HasOne("APIWebServer.Models.Location", "Locations")
+                    b.HasOne("APIWebServer.Models.Location", "Location")
                         .WithMany("Residents")
-                        .HasForeignKey("LocationsId");
+                        .HasForeignKey("LocationId");
 
-                    b.Navigation("Locations");
+                    b.Navigation("Location");
                 });
 
             modelBuilder.Entity("CharacterEpisode", b =>
@@ -148,7 +148,7 @@ namespace APIWebServer.Migrations
 
                     b.HasOne("APIWebServer.Models.Episode", null)
                         .WithMany()
-                        .HasForeignKey("EpisodesId")
+                        .HasForeignKey("EpisodeId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });

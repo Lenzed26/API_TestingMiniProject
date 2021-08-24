@@ -52,7 +52,7 @@ namespace APIWebServer.Migrations
                     Species = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Type = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Gender = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    LocationsId = table.Column<int>(type: "int", nullable: true),
+                    LocationId = table.Column<int>(type: "int", nullable: true),
                     Image = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Url = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Created = table.Column<DateTime>(type: "datetime2", nullable: false)
@@ -61,8 +61,8 @@ namespace APIWebServer.Migrations
                 {
                     table.PrimaryKey("PK_Characters", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Characters_Locations_LocationsId",
-                        column: x => x.LocationsId,
+                        name: "FK_Characters_Locations_LocationId",
+                        column: x => x.LocationId,
                         principalTable: "Locations",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
@@ -73,11 +73,11 @@ namespace APIWebServer.Migrations
                 columns: table => new
                 {
                     CharactersId = table.Column<int>(type: "int", nullable: false),
-                    EpisodesId = table.Column<int>(type: "int", nullable: false)
+                    EpisodeId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_CharacterEpisode", x => new { x.CharactersId, x.EpisodesId });
+                    table.PrimaryKey("PK_CharacterEpisode", x => new { x.CharactersId, x.EpisodeId });
                     table.ForeignKey(
                         name: "FK_CharacterEpisode_Characters_CharactersId",
                         column: x => x.CharactersId,
@@ -85,22 +85,22 @@ namespace APIWebServer.Migrations
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_CharacterEpisode_Episodes_EpisodesId",
-                        column: x => x.EpisodesId,
+                        name: "FK_CharacterEpisode_Episodes_EpisodeId",
+                        column: x => x.EpisodeId,
                         principalTable: "Episodes",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_CharacterEpisode_EpisodesId",
+                name: "IX_CharacterEpisode_EpisodeId",
                 table: "CharacterEpisode",
-                column: "EpisodesId");
+                column: "EpisodeId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Characters_LocationsId",
+                name: "IX_Characters_LocationId",
                 table: "Characters",
-                column: "LocationsId");
+                column: "LocationId");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
